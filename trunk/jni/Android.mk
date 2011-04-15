@@ -110,7 +110,7 @@ include $(BUILD_STATIC_LIBRARY)
 #LOCAL_C_INCLUDES += $(MY_INCLUDES)
 #LOCAL_CFLAGS += $(MY_CFLAGS)
 #LOCAL_STATIC_LIBRARIES:= libpdf libjpeg libft2 
-#LOCAL_SHARED_LIBRARIES:= libz libc libcorecg libsgl libandroid_runtime
+#LOCAL_SHARED_LIBRARIES:= libz libc libandroid_runtime
 #include $(BUILD_EXECUTABLE)
 
 include $(CLEAR_VARS)
@@ -118,8 +118,8 @@ LOCAL_SRC_FILES:=PdfFacade.cpp
 LOCAL_C_INCLUDES += $(MY_INCLUDES)
 LOCAL_CFLAGS += $(MY_CFLAGS) -DPDF_FACADE_TEST
 LOCAL_MODULE := pdffacade_test
-LOCAL_STATIC_LIBRARIES:= libpdf libjpeg libft2 
-LOCAL_SHARED_LIBRARIES:= libz libc libcorecg libsgl libandroid_runtime
+LOCAL_STATIC_LIBRARIES:= libpdf libft2 libpng
+LOCAL_SHARED_LIBRARIES:= libz libc libandroid_runtime libjpeg
 include $(BUILD_EXECUTABLE)
 
 
@@ -129,9 +129,9 @@ LOCAL_SRC_FILES := org_broncho_pdfreader_PdfDecoder.cpp PdfFacade.cpp
 LOCAL_C_INCLUDES += $(MY_INCLUDES)
 LOCAL_CFLAGS += $(MY_CFLAGS)
 LOCAL_C_INCLUDES += $(JNI_H_INCLUDE)
-LOCAL_SHARED_LIBRARIES := libcutils	libutils libz libc libcorecg libsgl libandroid_runtime  libexpat
-LOCAL_STATIC_LIBRARIES:= libpdf libjpeg libft2
-LOCAL_WHOLE_STATIC_LIBRARIES := libpdf libjpeg
+LOCAL_SHARED_LIBRARIES := libcutils	libutils libz libc libandroid_runtime  libexpat libjpeg 
+LOCAL_STATIC_LIBRARIES:= libpdf libft2 libpng
+LOCAL_WHOLE_STATIC_LIBRARIES := libpdf 
 LOCAL_PRELINK_MODULE := false
 include $(BUILD_SHARED_LIBRARY)
 
